@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <header className='bg-surface-muted border-b border-border'>
       {/* Navigation */}
-      <nav className='page-container flex justify-between items-center h-20 p-4'>
+      <nav className='page-container flex justify-between items-center h-20'>
         <Link href='/' className='text-3xl font-bold tracking-tight text-foreground'>
           Enuvora!
         </Link>

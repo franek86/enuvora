@@ -9,7 +9,7 @@ const MainLayout = ({ children }: Props) => {
   return (
     <>
       <Navbar />
-      <main className='page-container'>{children}</main>
+      <main>{children}</main>
     </>
   );
 };
