@@ -4,6 +4,7 @@ import Image from "next/image";
 import heroBg from "../../assets/enuvora-hero.jpg";
 import Button from "../ui/Button";
 import { MoveRight } from "lucide-react";
+import Subtitle from "../ui/Subtitle";
 
 const Hero = () => {
   return (
@@ -19,7 +20,7 @@ const Hero = () => {
 
       <div className='page-container'>
         <div className='md:max-w-1/3 min-h-[80vh] relative flex flex-col justify-center gap-2'>
-          <p className='uppercase font-bold text-sm text-foreground tracking-widest'>The art of everday living</p>
+          <Subtitle>The art of everday living</Subtitle>
           <Button variation='primary' iconRight={<MoveRight size={18} />}>
             Explore the collection{" "}
           </Button>
