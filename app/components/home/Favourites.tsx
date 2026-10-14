@@ -2,6 +2,7 @@ import Link from "next/link";
 import Card from "../card/Card";
 import Subtitle from "../ui/Subtitle";
 import { ArrowUpRight } from "lucide-react";
+import Button from "../ui/Button";
 
 const DUMMY_DATA_TEMPORARILY = [
   {
@@ -39,13 +40,15 @@ const Favourites = () => {
             <Subtitle>The edit</Subtitle>
             <h2 className='section-title'>Meet your new favorites.</h2>
           </div>
-          <Link className='inline-flex items-center text-foreground text-sm gap-2.5 pb-1.5 border-b border-foreground' href='/shop'>
-            Shop all
-            <ArrowUpRight size={16} />
+          <Link href='/shop'>
+            <Button variation='outline'>
+              Shop all
+              <ArrowUpRight size={16} />
+            </Button>
           </Link>
         </div>
 
-        <div className='grid gap-3 md:grid-cols-3 '>
+        <div className='grid gap-4 md:grid-cols-3'>
           {DUMMY_DATA_TEMPORARILY.map((item) => {
             return <Card key={item.id} data={item} />;
           })}
