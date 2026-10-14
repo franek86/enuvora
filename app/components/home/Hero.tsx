@@ -1,9 +1,9 @@
-import React from "react";
 import Image from "next/image";
+import { MoveRight } from "lucide-react";
 
 import heroBg from "../../assets/enuvora-hero.jpg";
+
 import Button from "../ui/Button";
-import { MoveRight } from "lucide-react";
 import Subtitle from "../ui/Subtitle";
 
 const Hero = () => {

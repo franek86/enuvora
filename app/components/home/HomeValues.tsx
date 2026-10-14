@@ -30,10 +30,10 @@ const HomeValues = () => {
     <div className='bg-surface-muted'>
       <div className='page-container'>
         <div className='grid md:grid-cols-3 '>
-          {homeValuesSections.map((item) => {
+          {homeValuesSections.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div className='flex justify-center items-center gap-4 py-8 border-b md:not-last:border-r border-border'>
+              <div key={index} className='flex justify-center items-center gap-4 py-8 border-b md:not-last:border-r border-border'>
                 <Icon size={20} />
                 <div className='gap-2'>
                   <div className='font-bold text-sm'>{item.title}</div>
