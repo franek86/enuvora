@@ -18,8 +18,8 @@ const MobileMenu = ({ navLinks, setOpen }: MobileMenuType) => {
         {navLinks.map((link) => {
           return (
             <Link
-              className='rounded-md px-2 py-3 text-foreground-muted transition-colors hover:text-foreground hover:bg-brand-100'
               key={link.href}
+              className='rounded-md px-2 py-3 text-foreground-muted transition-colors hover:text-foreground hover:bg-brand-100'
               href={link.href}
               onClick={() => setOpen(false)}
             >

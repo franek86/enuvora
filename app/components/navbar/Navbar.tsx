@@ -29,10 +29,10 @@ const Navbar = () => {
             const isActive = pathname === link.href;
             return (
               <Link
+                key={link.href}
                 className={`text-sm font-medium uppercase transition-colors 
                 ${isActive ? "text-foreground" : "text-muted hover:text-foreground"}
                 `}
-                key={link.href}
                 href={link.href}
               >
                 {link.label}
