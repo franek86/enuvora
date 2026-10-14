@@ -77,6 +77,13 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
+
+  .section-title {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--color-foreground);
+  }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -91,13 +98,6 @@
   @media (min-width: 1024px) {
     padding-inline: 2rem;
   }
-}
-
-@utility section-title {
-  font-size: 32px;
-  font-weight: 500;
-  line-height: 1.2;
-  color: var(--color-foreground);
 }
 
 @utility text-muted {

@@ -12,8 +12,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variants: Record<ButtonVariation, string> = {
-  primary: "bg-brand-700 text-surface hover:bg-brand-200 hover:text-brand-700",
-  outline: "border border-border text-brand-700 bg-transparent hover:bg-border",
+  primary: "justify-center font-bold  bg-brand-700 p-5 text-surface hover:bg-brand-200 hover:text-brand-700",
+  outline: "text-foreground text-sm gap-2.5 pb-1.5 border-b border-foreground",
 };
 
 const Button = ({
@@ -22,15 +22,15 @@ const Button = ({
   iconLeft,
   iconRight,
   fullWitdh = false,
-  paddingX = "p-5",
+  paddingX,
   className = "",
   ...props
 }: ButtonProps) => {
   return (
     <button
-      className={`inline-flex items-center justify-center transition-colors gap-5 
+      className={`inline-flex items-center transition-colors gap-5 
         disabled:cursor-not-allowed disabled:bg-surface-muted cursor-pointer
-        font-bold text-sm ${fullWitdh ? "w-full" : "w-fit"} ${variants[variation]} ${paddingX}
+        text-sm ${fullWitdh ? "w-full" : "w-fit"} ${variants[variation]} ${paddingX}
         {...props}
       `}
     >

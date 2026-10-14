@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Menu, Search, ShoppingBasketIcon, User, X } from "lucide-react";
 import { navLinks } from "@/app/constants/navConstants";
 import MobileMenu from "./MobileMenu";
+import Logo from "../Logo";
 
 const buttonStyle = "rounded-full p-2 text-foreground-muted cursor-pointer transition-colors hover:bg-brand-100";
 
@@ -19,9 +20,7 @@ const Navbar = () => {
     <header className='bg-surface-muted border-b border-border'>
       {/* Navigation */}
       <nav className='page-container flex justify-between items-center h-20'>
-        <Link href='/' className='text-3xl font-bold tracking-tight text-foreground'>
-          Enuvora!
-        </Link>
+        <Logo />
 
         {/* Desktop navigation */}
         <div className='hidden items-center gap-8 md:flex'>
@@ -30,8 +29,8 @@ const Navbar = () => {
             return (
               <Link
                 key={link.href}
-                className={`text-sm font-medium uppercase transition-colors 
-                ${isActive ? "text-foreground" : "text-muted hover:text-foreground"}
+                className={`text-sm font-medium transition-colors 
+                ${isActive ? "text-foreground" : "text-muted underline-offset-8 hover:underline hover:text-foreground"}
                 `}
                 href={link.href}
               >
