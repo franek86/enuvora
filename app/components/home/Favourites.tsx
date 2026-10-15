@@ -1,37 +1,15 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+
 import Card from "../card/Card";
 import Subtitle from "../ui/Subtitle";
-import { ArrowUpRight } from "lucide-react";
 import Button from "../ui/Button";
 
-const DUMMY_DATA_TEMPORARILY = [
-  {
-    id: 1,
-    title: "The Sculptural Vase",
-    price: 48,
-    category: "Home and living",
-    tag: "Bestseller",
-    image: "/images/sculpture-vase.jpg",
-  },
-  {
-    id: 2,
-    title: "The Everyday Tote",
-    price: 65,
-    category: "Everyday Essentials",
-    tag: "Everyday favorite",
-    image: "/images/everyday-tote.jpg",
-  },
-  {
-    id: 3,
-    title: "The Dome Table Lamp",
-    price: 89,
-    category: "Home and living",
-    tag: "New arrival",
-    image: "/images/dome-lamp.jpg",
-  },
-];
+import { DUMMY_PRODUCTS_TEMPORARILY } from "@/app/constants/shopDummydata";
 
 const Favourites = () => {
+  const favoriteData = DUMMY_PRODUCTS_TEMPORARILY?.filter((item) => item.favorite === true);
+
   return (
     <section className='bg-surface py-16'>
       <div className='page-container'>
@@ -49,8 +27,8 @@ const Favourites = () => {
         </div>
 
         <div className='grid gap-4 md:grid-cols-3'>
-          {DUMMY_DATA_TEMPORARILY.map((item) => {
-            return <Card key={item.id} data={item} />;
+          {favoriteData.map((item) => {
+            return <Card key={item.id} product={item} />;
           })}
         </div>
       </div>
