@@ -1,20 +1,13 @@
 import Image from "next/image";
 import { Heart, Plus } from "lucide-react";
+import { Product } from "@/app/types/product";
 
-type CardProps = {
-  title: string;
-  image: string;
-  price: number;
-  category?: string;
-  tag?: string;
-};
-
-interface CardResponse {
-  data: CardProps;
+interface CardProps {
+  product: Product;
 }
 
-const Card = ({ data }: CardResponse) => {
-  const { title, image, price, category, tag } = data;
+const Card = ({ product }: CardProps) => {
+  const { title, image, price, category, tag } = product;
   return (
     <article className='group bg-surface border border-brand-200 cursor-pointer'>
       <div className='relative overflow-hidden aspect-square'>
