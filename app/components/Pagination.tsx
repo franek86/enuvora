@@ -7,6 +7,18 @@ type Props = {
 };
 
 const Pagination = ({ pages, current, onClick }: Props) => {
+  const visiblePages = Array.from({ length: pages }, (_, i) => i + 1).filter(
+    (page) => page === 1 || page === pages || Math.abs(page - current) <= 1,
+  );
+
+  const paginationItems = visiblePages.reduce<(number | "...")[]>((result, page, index) => {
+    if (index > 0 && page - visiblePages[index - 1] > 1) {
+      result.push("...");
+    }
+    result.push(page);
+    return result;
+  }, []);
+
   return (
     <nav className='my-8' aria-label='pagination'>
       <button
@@ -20,6 +32,7 @@ const Pagination = ({ pages, current, onClick }: Props) => {
 
       {Array.from({ length: pages }, (_, i) => i + 1).map((p) => (
         <button
+          key={p}
           className={`
         inline-flex items-center justify-center text-sm rounded-sm cursor-pointer transition-colors h-9 w-9 hover:bg-brand-200 hover:text-background
         ${p === current ? "bg-brand-600 text-brand-50" : "font-bold"}

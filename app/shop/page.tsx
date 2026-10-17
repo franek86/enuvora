@@ -34,10 +34,7 @@ const Shop = () => {
           <p className='max-w-120'>Simple objects. Lasting favorites. Discover pieces that bring a little more ease to your everyday.</p>
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-[300px_minmax(400px,_1fr)] gap-4'>
-          <FilterShop />
-          <ListShop />
-        </div>
+        <ListShop />
       </main>
     </MainLayout>
   );
