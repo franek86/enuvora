@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Heart, Plus } from "lucide-react";
 import { Product } from "@/app/types/product";
+import { money } from "@/app/helpers/currency";
 
 interface CardProps {
   product: Product;
@@ -9,7 +10,7 @@ interface CardProps {
 const Card = ({ product }: CardProps) => {
   const { title, image, price, category, tag } = product;
   return (
-    <article className='group bg-surface border border-brand-200 cursor-pointer'>
+    <article className='group bg-surface border border-brand-200 cursor-pointer h-fit'>
       <div className='relative overflow-hidden aspect-square'>
         <header className='flex justify-between items-center relative z-1 p-4'>
           <div className='bg-surface text-[9px] uppercase px-2.25 py-1.25 tracking-wider'>{tag}</div>
@@ -33,7 +34,7 @@ const Card = ({ product }: CardProps) => {
       <div className='p-4'>
         <main className='flex justify-between items-center text-foreground font-normal text-sm'>
           <p className='underline-offset-5 hover:underline'>{title}</p>
-          <p>€ {price}</p>
+          <p>{money(price)}</p>
         </main>
         <footer className='text-foreground-muted text-[11px] mt-2'>{category}</footer>
       </div>

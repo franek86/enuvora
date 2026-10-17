@@ -84,6 +84,14 @@
     line-height: 1.2;
     color: var(--color-foreground);
   }
+
+  .filter-group {
+    @apply flex flex-col border-t border-border pt-5 gap-3;
+
+    .filter-legend {
+      @apply text-[10px] font-semibold uppercase mb-3 tracking-widest;
+    }
+  }
 }
 
 /* -------------------------------------------------------------------------- */
